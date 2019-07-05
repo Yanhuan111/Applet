@@ -1,0 +1,21 @@
+<!-- components/information/information.wxml -->
+<view class="container" hidden="{{showinformation}}" bindtap="close">
+    <view class="box">
+        <view class="header">
+            <view class="information-selected">{{selected}}</view>
+            <image src="../../images/清空.png" class="img" />
+            <view class="information-empty">{{empty}}</view>
+        </view>
+        <view class="main">
+            <scroll-view  class="min-box" scroll-y="{{true}}" scroll-into-view="{{View}}" scroll-with-animation="{{true}}" style="height:{{conHeight}}rpx;" bindscroll="onScroll">
+               <!-- <block wx:for="{{events}}" wx:key="{{item.id}}"> -->
+                <view class="information-title">{{title}}</view>
+                <view class="information-price">{{money}}</view>
+                <text class="information-down">{{down}}</text>
+                <text class="information-num">{{num}}</text>
+                <text class="information-add">{{add}}</text>
+              <!-- </block>     -->
+            </scroll-view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+<!--pages/order/order.wxml-->
+<view class="main">
+    <div class="container">
+
+    </div>
+    <view class="order">
+        <view class="content" bindtap="Order">
+              开始点单
+        </view>
+    </view>
+</view>

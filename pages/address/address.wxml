@@ -1,0 +1,15 @@
+<!--pages/address/address.wxml-->
+<view class="main">
+    <view  class="search"  bindtap="position">
+          <image src="../../images/搜索.png" />
+    </view> 
+    <button type="button" class="Nearby-stores" >
+        定位附近门店
+     <image src="../../images/定位.png" class="img1"/>
+    </button>
+    <button type="button" class="enshrine" >
+        收藏的门店
+    <image src="../../images/收藏.png" class="img2"/>
+    </button>
+    <button type="button" class="choice" bindtap="choose">选择饮品</button>
+</view>

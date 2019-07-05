@@ -1,0 +1,28 @@
+<!-- index.wxml -->
+<swiper indicator-dots="{{true}}" indicator-active-color="#ff7e00" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}"  wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" class="slide-img" mode='aspectFill' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="main">
+  <view class="self-help" bindtap="order">自助点单</view>
+  <view class="container">
+    <view class="first">
+      <image src="../../images/time.png" class="time" />
+      <view class="group-booking">限时拼团</view>
+      <image src="../../images/arrows.png" class="arrows1" />
+    </view>
+    <view class="second">
+      <image src="../../images/movie.png" class="movie" />
+      <view class="cinema">都可影院</view>
+      <image src="../../images/arrows.png" class="arrows2" />
+    </view>
+    <view class="third">
+      <image src="../../images/money.png" class="money" />
+      <view class="wallet">CoCo钱包</view>
+      <image src="../../images/arrows.png" class="arrows3" />
+    </view>
+  </view>
+</view>

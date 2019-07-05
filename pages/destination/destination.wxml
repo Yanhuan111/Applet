@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="header">
+    <view class="time">
+      <text class="remove">取单时间</text>
+      <text class="now">现在取单，稍后来取</text>
+    </view>
+    <view class="address" bindtap="Choose">
+      <view class="position">取单地址</view>
+      <view class="site">
+        <view class="name">{{name}}</view>
+        <view class="minaddress">{{address}}</view>
+      </view>
+    </view>
+  </view>
+  <text class="detail">订单详情</text>
+  <scroll-view class="orderList" scroll-y="{{true}}" bindscroll="onScroll">
+    <view class="order" wx:for="{{carts}}" wx:key="index">
+      <view class='order-left'>
+        <view class="order-name">{{item.title}}</view>
+        <view class="property">
+          <text class="property1">{{item.metarial}}+</text>
+          <text class="property2">{{item.temperature}}+</text>
+          <text class="property3">{{item.sugar}}</text>
+        </view>
+      </view>
+      <view class='order-right'>
+        <text class="order-price">￥{{item.money}}</text>
+      </view>
+      <text class="order-num">x{{item.nums}}</text>
+    </view>
+  </scroll-view>
+
+  <view class="discount">
+    <image src="../../images/优惠券.png" class="img1" />
+    <text class="none">没有可用的优惠券</text>
+  </view>
+  <text class="remark">备注</text>
+  <input type="text" class="explain" placeholder="若有其他要求，请说明" />
+  <view class="footer">
+    <view class="total">
+      <image src="../../images/购物车1.png" class="quantity" bindtap="Selected" />
+      <view wx:if="{{isShow}}">
+        <view class="total_quantity">{{totaledquantity}}</view>
+      </view>
+    </view>
+    <view class="sum">￥{{totalprice}}</view>
+    <view class="account" bindtap="Account">去结算</view>
+    <image src="../../images/arrows.png" class="arrows" />
+  </view>
+    <action-sheet hidden="{{Hidden}}" >
+     <view class="mainBox">
+       <view class="bigBox">
+         <view class="top_box">
+           <view class="close" bindtap="Close">X</view>
+           <view class="pay_title">支付</view>
+           <view class="sum_price">订单总价</view>
+           <view class="totaledPrice">￥{{totalprice}}</view>
+         </view>
+         <view class="mindle_box">
+           <view class="pay_way">支付方式</view>
+           <view class="pay_choose">
+             <view class="icon">
+             <image src="../../images/微信支付.png" class="weichat_pay"/>
+           </view>
+           <view class="wechat">微信支付</view>
+           <icon wx:if="{{selectAllStatus}}" bindtap="Select" class="pay_select" color="#f17c0e" type="success_circle" />
+           <icon wx:else type="circle" color="#f17c0e" bindtap="Select" class="pay_select"/>
+           </view>
+         </view>
+         <view class="under_box">
+           <view class="confirm" bindtap="Gopay">
+             <view class="words">确认支付{{totalprice}}元</view>
+           </view>
+         </view>
+       </view>
+     </view>
+    </action-sheet>
+</view>

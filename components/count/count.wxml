@@ -1,0 +1,21 @@
+<!-- components/count/count.wxml -->
+<view class="wx-count" hidden="{{flag}}" bindtap="Close">
+    <view class="count-container" >
+        <view class="count-title">{{title}}</view>
+        <view class="count-metarial">{{metarial}}</view>
+        <view class="main1">
+            <button wx:for="{{metarials}}" wx:key="index" class="count-normal {{item.active ? 'active' : ''}}" bindtap="Change" data-taget="{{item.name}}" data-index="{{index}}">{{item.name}}</button>
+        </view>
+        <view class="count-temperature">{{temperature}}</view>
+        <view class="main2">
+            <button wx:for="{{temperatures}}" wx:key="index" class="normal-ice {{item.active1 ? 'active1' : ''}}" bindtap="Change1" data-taget="{{item.name}}" data-index="{{index}}">{{item.name}}</button>
+        </view>
+        <view class="count-sugar">{{sugar}}</view>
+        <view class="main3">
+            <button wx:for="{{sugars}}" wx:key="index" class="normal-sugar {{item.active2 ? 'active2' : ''}}" bindtap="Change2" data-taget="{{item.name}}" data-index="{{index}}">{{item.name}}</button>
+        </view>
+        <view class="count-prcie">{{money}}</view>
+        <!-- <view class="count-num">{{nums}}</view> -->
+        <button class="count-add" bindtap="Add">{{add}}</button>
+    </view>
+</view>

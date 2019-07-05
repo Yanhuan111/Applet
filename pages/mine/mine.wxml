@@ -1,0 +1,36 @@
+<!-- pages/mine/mine.wxml -->
+<view class="main">
+    <view class="header">
+        <open-data type="userAvatarUrl" class="thumb"></open-data>
+        <open-data type="userNickName" lang="zh_CN" class="nickname"></open-data>
+    </view>
+    <view class="container">
+        <!-- <view class="box"> -->
+            <view class="box1">
+                <image src="../../images/优惠券.png" class="img1"/>
+                <text >我的优惠</text>
+                <image src="../../images/arrows.png" class="arrows"/>
+            </view>
+            <view class="box2">
+                <image src="../../images/手机.png" class="img2"/>
+                <text >158****3255</text>
+                <image src="../../images/arrows.png" class="arrows"/>
+            </view>
+            <view class="box3">
+                <image src="../../images/平台须知.png" class="img3"/>
+                <text >平台须知</text>
+                <image src="../../images/arrows.png" class="arrows"/>
+            </view>
+            <view class="box4">
+                <image src="../../images/我的钱包.png" class="img4"/>
+                <text >CoCo钱包</text>
+                <image src="../../images/arrows.png" class="arrows"/>
+            </view>
+            <view class="box5">
+                <image src="../../images/收货地址.png" class="img5"/>
+                <text >我的收货地址</text>
+                <image src="../../images/arrows.png" class="arrows"/>
+            </view>
+        <!-- </view> -->
+    </view>
+</view>

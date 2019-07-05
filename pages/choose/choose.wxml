@@ -1,0 +1,41 @@
+<!-- pages/choose/choose.wxml -->
+<view class="main">
+    <view class="category-left">
+        <view wx:for="{{category}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}" class="cate-list {{curIndex === index ? 'on' : ''}}" bindtap="switchTap">
+            {{item.name1}}
+        </view>
+    </view>
+    <scroll-view class="category-right" scroll-y scroll-into-view="{{toView}}" scroll-with-animation="{{true}}" style="height:{{conHeight}}rpx;" bindscroll="onScroll">
+        <block wx:for="{{detail}}" wx:key="{{item.id}}">
+            <view id="{{item.id}}" bindtap="test" data-index="{{index}}">
+                <view class="cate-title">
+                    <text>{{item.cate}}</text>
+                </view>
+                <view class="cate-box" wx:for="{{item.detail}}" wx:key="{{item.id}}">
+                    <image src="{{item.images1}}" class="img1" />
+                    <view class="drink-name">{{item.name}}</view>
+                    <view class="drink-box">
+                        <text class="drink-price">￥{{item.price}}</text>
+                        <image src="{{item.images3}}" class="drink-reduce" bindtap="reduceCount" data-index="{{index}}"/>
+                        <text class="num">{{item.num}}</text>
+                        <image src="{{item.images2}}" class="drink-add" bindtap="addCount" data-index="{{index}}" data-name="{{item.name}}" data-price="{{item.price}}" />
+                    </view>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+    <count id="count" title="{{countname}}" money="{{countprice}}" nums="{{countnum}}">
+    </count>
+    <!-- <information id="information"></information> -->
+    <view class="footer">
+        <view class="total"> 
+            <image src="../../images/购物车1.png" class="quantity" bindtap="Selected" />
+            <view wx:if="{{isShow}}">
+                <view class="total_quantity">{{totaledquantity}}</view>
+            </view>
+        </view>
+        <view class="sum">￥{{totalprice}}</view>
+        <view class="account" bindtap="Account">去结算</view>
+        <image src="../../images/arrows.png" class="arrows" />
+    </view>
+</view>
